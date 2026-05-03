@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://gt7te8vtul78" path="res://grass1.png" id="1_o1ld7"]
 [ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://player.tscn" id="2_1ey7h"]
-[ext_resource type="Script" uid="uid://dv4owhojygfr3" path="res://enemy_test.gd" id="3_o1ld7"]
+[ext_resource type="PackedScene" uid="uid://bpul1sjmkry8t" path="res://follower.tscn" id="3_o1ld7"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_j0o1r"]
 
@@ -15,10 +15,6 @@ uv1_scale = Vector3(6, 6, 6)
 [sub_resource type="PlaneMesh" id="PlaneMesh_2ayvv"]
 material = SubResource("StandardMaterial3D_o1ld7")
 size = Vector2(100, 100)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ey7h"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1ey7h"]
 
 [node name="Home" type="Node3D" unique_id=127266152]
 
@@ -37,12 +33,4 @@ mesh = SubResource("PlaneMesh_2ayvv")
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 28.946762, 0)
 shadow_enabled = true
 
-[node name="EnemyTest" type="CharacterBody3D" parent="." unique_id=604303277]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -39)
-script = ExtResource("3_o1ld7")
-
-[node name="EnemyHitBox" type="CollisionShape3D" parent="EnemyTest" unique_id=1683459863]
-shape = SubResource("CapsuleShape3D_1ey7h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyTest" unique_id=785833605]
-mesh = SubResource("CapsuleMesh_1ey7h")
+[node name="Follower" parent="." unique_id=419313014 instance=ExtResource("3_o1ld7")]
