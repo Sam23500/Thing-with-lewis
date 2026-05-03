@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bpul1sjmkry8t"]
+
+[ext_resource type="Script" uid="uid://dsctkd7whj1sq" path="res://follower.gd" id="1_hookf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ey7h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1ey7h"]
+
+[node name="Follower" type="CharacterBody3D" unique_id=419313014]
+script = ExtResource("1_hookf")
+
+[node name="FollowerHitBox" type="CollisionShape3D" parent="." unique_id=2146847329]
+shape = SubResource("CapsuleShape3D_1ey7h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=332232410]
+mesh = SubResource("CapsuleMesh_1ey7h")
