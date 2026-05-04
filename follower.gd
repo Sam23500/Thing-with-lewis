@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 var target_velocity = Vector3.ZERO
 var player: Player
-var follow_dist: float = 5
+var follow_dist: float = 3
 
 const SPEED = 4
 
@@ -18,8 +18,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
-	var distance_squared = position.distance_squared_to(player.position)
-	var direction = position.direction_to(player.position)
+	var distance_squared = global_position.distance_squared_to(player.position)
+	var direction = global_position.direction_to(player.position)
 	if distance_squared < (follow_dist + SPEED*delta)**2:
 		direction = 0
 	
@@ -29,5 +29,5 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
 	move_and_slide()

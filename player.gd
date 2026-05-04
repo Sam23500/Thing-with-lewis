@@ -24,7 +24,7 @@ func _physics_process(delta):
 	else:
 		max_speed = SPEED
 		stamina += delta
-		if stamina > max_stamina * 0.5 and not Input.is_action_pressed("sprint"):
+		if stamina > max_stamina * 0.3 and not Input.is_action_pressed("sprint"):
 			exhausted = false
 		if stamina > max_stamina:
 			stamina = max_stamina
