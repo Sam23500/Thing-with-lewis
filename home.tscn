@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://gt7te8vtul78" path="res://grass1.png" id="1_o1ld7"]
 [ext_resource type="PackedScene" uid="uid://diygwv781k3tm" path="res://player.tscn" id="2_1ey7h"]
-[ext_resource type="PackedScene" uid="uid://bpul1sjmkry8t" path="res://follower.tscn" id="3_o1ld7"]
+[ext_resource type="Script" uid="uid://0t8500fhxt5q" path="res://friend_box.gd" id="3_o1ld7"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_j0o1r"]
 
@@ -10,11 +10,15 @@
 shading_mode = 0
 specular_mode = 2
 albedo_texture = ExtResource("1_o1ld7")
-uv1_scale = Vector3(6, 6, 6)
+uv1_scale = Vector3(16, 16, 16)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2ayvv"]
 material = SubResource("StandardMaterial3D_o1ld7")
 size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ayvv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w1mvj"]
 
 [node name="Home" type="Node3D" unique_id=127266152]
 
@@ -33,4 +37,15 @@ mesh = SubResource("PlaneMesh_2ayvv")
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 28.946762, 0)
 shadow_enabled = true
 
-[node name="Follower" parent="." unique_id=419313014 instance=ExtResource("3_o1ld7")]
+[node name="FriendBox" type="StaticBody3D" parent="." unique_id=258122460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+script = ExtResource("3_o1ld7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FriendBox" unique_id=1983255467]
+shape = SubResource("BoxShape3D_2ayvv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FriendBox" unique_id=751019502]
+mesh = SubResource("BoxMesh_w1mvj")
+
+[connection signal="mouse_entered" from="FriendBox" to="FriendBox" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="FriendBox" to="FriendBox" method="_on_mouse_exited"]

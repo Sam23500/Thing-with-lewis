@@ -6,7 +6,6 @@ var player: Player
 var follow_dist: float = 5
 
 const SPEED = 4
-const JUMP_VELOCITY = 4.5
 
 # Get gravity from project settings to be synced with RigidBody nodes
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
