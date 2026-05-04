@@ -6,9 +6,14 @@
 
 [sub_resource type="PrismMesh" id="PrismMesh_lxycn"]
 
-[node name="BuildingSpawner" type="StaticBody3D" unique_id=1829723719]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cm2n5"]
+
+[node name="BuildingSpawner" type="StaticBody3D" unique_id=1829723719 groups=["Interactables"]]
 physics_material_override = SubResource("PhysicsMaterial_w1mvj")
 script = ExtResource("1_cm2n5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=133246783]
 mesh = SubResource("PrismMesh_lxycn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=633556643]
+shape = SubResource("BoxShape3D_cm2n5")

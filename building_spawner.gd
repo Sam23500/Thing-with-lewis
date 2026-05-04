@@ -1,11 +1,19 @@
 extends StaticBody3D
 
+var active: bool = false
+
+func activate():
+	active = true
+
+func deactivate():
+	active = false
+
 func _ready():
 	pass
 
 func _process(delta: float) -> void:
 	# Spawn an object after 2 seconds
-	if Input.is_action_just_pressed("E"):
+	if Input.is_action_just_pressed("interact") and active:
 		print("E pressed")
 		spawn_object()
 

@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("jump") and active:
+	if Input.is_action_just_pressed("interact") and active:
 		spawn_friend()
 
 func spawn_friend():

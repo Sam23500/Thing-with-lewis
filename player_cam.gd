@@ -28,8 +28,6 @@ func _physics_process(delta: float) -> void:
 	if current_focus != previous_focus:
 			activate_focus_object(current_focus)
 			deactivate_focus_object(previous_focus)
-	else:
-		current_focus = null
 	previous_focus = current_focus
 
 func activate_focus_object(collider: Object):
