@@ -5,9 +5,9 @@ func _ready():
 
 func _process(delta: float) -> void:
 	# Spawn an object after 2 seconds
-	if Input.is_action_pressed("E"):
-		spawn_object()
+	if Input.is_action_just_pressed("E"):
 		print("E pressed")
+		spawn_object()
 
 func spawn_object():
 	# 1. Create a new Sprite2D node

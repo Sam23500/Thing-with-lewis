@@ -11,7 +11,7 @@ const SPEED = 4
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
-	player = get_tree().get_first_node_in_group("player")
+	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(delta):
 	# Add gravity

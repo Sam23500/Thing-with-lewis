@@ -28,7 +28,7 @@ shape = SubResource("WorldBoundaryShape3D_j0o1r")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=978873937]
 mesh = SubResource("PlaneMesh_2ayvv")
 
-[node name="Player" parent="." unique_id=206444926 groups=["player"] instance=ExtResource("2_1ey7h")]
+[node name="Player" parent="." unique_id=206444926 groups=["Player"] instance=ExtResource("2_1ey7h")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1828834236]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 28.946762, 0)
