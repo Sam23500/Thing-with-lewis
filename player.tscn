@@ -22,3 +22,15 @@ target_position = Vector3(0, 0, -1000)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1746022407]
 mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="GUI" type="Control" parent="." unique_id=2126631854]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="GUI" unique_id=1492441644]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "CUM"
