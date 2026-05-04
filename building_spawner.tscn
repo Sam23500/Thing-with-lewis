@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://5fssn1o43ayq"]
+
+[ext_resource type="Script" uid="uid://bnaycji7voomk" path="res://building_spawner.gd" id="1_cm2n5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w1mvj"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_lxycn"]
+
+[node name="BuildingSpawner" type="StaticBody3D" unique_id=1829723719]
+physics_material_override = SubResource("PhysicsMaterial_w1mvj")
+script = ExtResource("1_cm2n5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=133246783]
+mesh = SubResource("PrismMesh_lxycn")
