@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b42poyb8v3beg" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Script" uid="uid://0ii1pwjmpinv" path="res://player_cam.gd" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://bmck41tigxsca" path="res://health_bar.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://bkuyqjjrdn2n7" path="res://stamina_bar.gd" id="4_hqtel"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j0o1r"]
 
@@ -34,3 +36,23 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "CUM"
+
+[node name="HealthBar" type="ProgressBar" parent="GUI" unique_id=1824821892]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 1016.0
+offset_right = 348.0
+offset_bottom = 1043.0
+step = 1.0
+value = 3.0
+show_percentage = false
+script = ExtResource("3_i3pqv")
+
+[node name="StaminaBar" type="ProgressBar" parent="GUI" unique_id=1701762505]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 992.0
+offset_right = 190.0
+offset_bottom = 1006.0
+show_percentage = false
+script = ExtResource("4_hqtel")
